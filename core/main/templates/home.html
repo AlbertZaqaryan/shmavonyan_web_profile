@@ -1,0 +1,31 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block title %}Home{% endblock %}
+{% block content %}
+<section class="hero">
+    <div class="container">
+        <div class="welcome-content">
+            <h2>{{ profile.name }}</h2>
+            <p>{{ profile.prof }}</p>
+        </div>
+        <div class="hero-image">
+            <img src="{{ profile.image.url }}" alt="Profile Picture" class="rounded-image">
+        </div>
+    </div>
+</section>
+
+
+<section class="contact-info">
+    <div class="container">
+        <div class="email">
+            <img src="{% static 'images/email_icon.png' %}" alt="Email Icon" class="icon">
+            <span>gshmavon@yahoo.com</span>
+        </div>
+        <div class="social-icons">
+            <a href="https://www.facebook.com/profile.php?id=100012226841418" target="_blank"><img src="{% static 'images/facebook_icon.png' %}" alt="Facebook" class="icon"></a>
+            <a href="https://hy.wikipedia.org/wiki/%D4%B3%D5%A1%D5%A3%D5%AB%D5%AF_%D5%87%D5%B4%D5%A1%D5%BE%D5%B8%D5%B6%D5%B5%D5%A1%D5%B6" target="_blank"><img src="{% static 'images/wikipedia_icon.png' %}" alt="Wikipedia" class="icon"></a>
+            <a href="https://www.linkedin.com/in/gagik-shmavonyan-66165424/?originalSubdomain=am" target="_blank"><img src="{% static 'images/linkedin_icon.png' %}" alt="LinkedIn" class="icon"></a>
+        </div>
+    </div>
+</section>
+{% endblock %}

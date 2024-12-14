@@ -1,0 +1,15 @@
+<!-- contact.html -->
+{% extends 'base.html' %}
+{% block title %}Contact{% endblock %}
+{% block content %}
+<section id="contact" class="contact">
+    <div class="container">
+        <h2>Contact Me</h2>
+        <form method="POST">
+            {% csrf_token %}
+            {{ form.as_p }}
+            <button type="submit" class="btn">Send</button>
+        </form>
+    </div>
+</section>
+{% endblock %}
