@@ -27,3 +27,17 @@ class ContactMessage(models.Model):
 
     def __str__(self):
         return f"Message from {self.name}"
+
+class About(models.Model):
+
+    text = models.TextField()
+
+    def __str__(self):
+        return "About me"
+    
+class Education(models.Model):
+
+    info = models.TextField()
+
+    def __str__(self):
+        return self.info

@@ -1,12 +1,16 @@
 from django.shortcuts import render, get_object_or_404, redirect
 from django.http import HttpResponse
-from .models import Article, ContactMessage, Profile
+from .models import Article, ContactMessage, Profile, About, Education
 from .forms import ContactForm
 
 def home(request):
     profile = Profile.objects.first()
+    about_info = About.objects.first()
+    education_list = Education.objects.all()
     return render(request, 'home.html', context={
-        'profile':profile
+        'profile':profile,
+        'about_info':about_info,
+        'education_list':education_list
     })
 
 def about(request):

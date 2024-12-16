@@ -5,8 +5,8 @@
 <section class="hero">
     <div class="container">
         <div class="welcome-content">
-            <h2>{{ profile.name }}</h2>
-            <p>{{ profile.prof }}</p>
+            <h1 class="name-title">Gagik Shmavonyan</h1>
+            <p class="position-title">Professor at National Polytechnic University of Armenia</p>
         </div>
         <div class="hero-image">
             <img src="{{ profile.image.url }}" alt="Profile Picture" class="rounded-image">
@@ -28,4 +28,81 @@
         </div>
     </div>
 </section>
+
+<section class="about-section">
+    <h1>About me</h1>
+    <p>{{ about_info.text }}</p>
+</section>
+
+<section class="about-section">
+    <h1>Education</h1>
+    {% for i in education_list %}
+        <p>{{ i.info }}</p>
+    {% endfor %}
+</section>
+
+
+<style>
+    .name-title {
+        font-family: 'Playfair Display', serif; /* Шрифт для заголовка */
+        font-size: 64px;
+        font-weight: 700;
+        line-height: 1.1;
+        color: #000; /* Черный цвет */
+        text-align: center;
+        margin-bottom: 10px;
+    }
+
+    .position-title {
+        font-family: 'Lora', serif; /* Шрифт для подзаголовка */
+        font-size: 20px;
+        font-weight: 600;
+        color: #5A6780; /* Серо-синий цвет */
+        text-align: center;
+        margin-top: 0;
+    }
+
+    @media (max-width: 768px) {
+        .name-title {
+            font-size: 42px; /* Уменьшаем размер шрифта на мобильных */
+        }
+        .position-title {
+            font-size: 16px;
+        }
+    }
+
+    .about-section {
+        padding: 50px 20px;
+        background-color: #F9F9F9; /* Светло-серый фон */
+        font-family: 'Arial', sans-serif;
+    }
+
+    .about-section h1 {
+        font-family: 'Playfair Display', serif;
+        font-size: 36px;
+        font-weight: bold;
+        color: #1E90FF; /* Голубой цвет для заголовка */
+        text-align: center;
+        margin-bottom: 20px;
+    }
+
+    .about-section p {
+        font-size: 18px;
+        line-height: 1.8;
+        color: #333; /* Тёмно-серый цвет для текста */
+        text-align: justify;
+        max-width: 800px;
+        margin: 0 auto; /* Центрируем текст */
+    }
+
+    @media (max-width: 768px) {
+        .about-section h1 {
+            font-size: 28px; /* Меньше заголовок на мобильных */
+        }
+        .about-section p {
+            font-size: 16px;
+        }
+    }
+
+</style>
 {% endblock %}

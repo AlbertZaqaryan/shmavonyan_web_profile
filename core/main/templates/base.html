@@ -7,14 +7,15 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>{% block title %}Profile{% endblock %}</title>
     <link rel="stylesheet" href="{% static 'css/styles.css' %}">
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700&family=Lora:wght@400;600&display=swap" rel="stylesheet">
+
 </head>
 <body>
     <header class="header">
         <div class="container">
             <nav class="nav">
                 <ul>
-                    <li><a href="{% url 'home' %}">Home</a></li>
-                    <li><a href="{% url 'about' %}">About</a></li>
+                    <li><a href="{% url 'home' %}">About</a></li>
                     <li><a href="{% url 'articles' %}">Articles</a></li>
                     <li><a href="{% url 'contact' %}">Contact</a></li>
                 </ul>
