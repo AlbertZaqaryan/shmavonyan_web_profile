@@ -31,13 +31,26 @@
 
 <section class="about-section">
     <h1>About me</h1>
-    <p>{{ about_info.text }}</p>
+    {% for i in about_info %}
+        <p>{{ i.text }}</p>
+        <br>
+    {% endfor %}
 </section>
 
 <section class="about-section">
     <h1>Education</h1>
     {% for i in education_list %}
         <p>{{ i.info }}</p>
+    {% endfor %}
+</section>
+
+
+<section class="about-section">
+    <h1>Experience</h1>
+    {% for i in experience_list %}
+        <p>{{ i.date }}</p>
+        <p>{{ i.info }}<b>{{ i.location }}</b></p>
+        <br>
     {% endfor %}
 </section>
 
@@ -91,7 +104,7 @@
         line-height: 1.8;
         color: #333; /* Тёмно-серый цвет для текста */
         text-align: justify;
-        max-width: 800px;
+        max-width: 1200px;
         margin: 0 auto; /* Центрируем текст */
     }
 
