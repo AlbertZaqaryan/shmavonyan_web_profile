@@ -55,6 +55,25 @@
 </section>
 
 
+
+<section class="about-section">
+    <h1>Awards</h1>
+    {% for i in awards_list %}
+        <p>{{ i.text }}</p>
+        <br>
+    {% endfor %}
+</section>
+
+
+<section class="about-section">
+    <h1>Science visit</h1>
+    {% for i in Science_visit_list %}
+        <p>{{ i.date }}</p>
+        <p>{{ i.location }}</p>
+        <br>
+    {% endfor %}
+</section>
+
 <style>
     .name-title {
         font-family: 'Playfair Display', serif; /* Шрифт для заголовка */

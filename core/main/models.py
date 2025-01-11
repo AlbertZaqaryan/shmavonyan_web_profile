@@ -51,3 +51,20 @@ class Experience(models.Model):
 
     def __str__(self):
         return self.info
+    
+
+    
+class Awards(models.Model):
+
+    text = models.TextField()
+
+    def __str__(self):
+        return self.text
+    
+class Science_visit(models.Model):
+
+    date = models.CharField(max_length=60)
+    locations = models.CharField(max_length=60)
+
+    def __str__(self):
+        return f'{self.date} -> {self.locations}'

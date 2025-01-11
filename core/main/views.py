@@ -1,6 +1,6 @@
 from django.shortcuts import render, get_object_or_404, redirect
 from django.http import HttpResponse
-from .models import Article, ContactMessage, Profile, About, Education, Experience
+from .models import Article, ContactMessage, Profile, About, Education, Experience, Science_visit, Awards
 from .forms import ContactForm
 
 def home(request):
@@ -8,11 +8,16 @@ def home(request):
     about_info = About.objects.all()
     education_list = Education.objects.all()
     experience_list = Experience.objects.all()
+    Science_visit_list = Science_visit.objects.all()
+    awards_list = Awards.objects.all()
     return render(request, 'home.html', context={
         'profile':profile,
         'about_info':about_info,
         'education_list':education_list,
-        'experience_list':experience_list
+        'experience_list':experience_list,
+        'Science_visit_list':Science_visit_list,
+        'awards_list':awards_list
+
     })
 
 def about(request):
